@@ -1,4 +1,4 @@
-my_string = input(str("Напишите любые три слова: "))
+my_string = input("Напишите любые три слова: ")
 print(len(my_string))
 print(my_string.upper())
 print(my_string.upper().lower())
