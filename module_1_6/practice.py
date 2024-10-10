@@ -1,5 +1,5 @@
 grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]
-students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}  # в алфавитном порядке aaron bilbo johny khendrik steve
+students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}  # в алфавитном порядке Aaron Bilbo Johnny Khendrik Steve
 names = list(students)  # переменная имён студентов во множестве
 names.sort()  # сортировка списка студентов по именам в алфавитном порядке
 gpa = {}
