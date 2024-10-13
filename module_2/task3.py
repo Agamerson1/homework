@@ -4,6 +4,8 @@ while value < len(my_list):
     number = my_list[value]
     value = value + 1
     # print (number)
-    if number == 0:
+    if number < 0:
         break
-print(number)
+    print(number)  # встретилось отрицательное число- цикл закончился.
+    elif number == 0:
+    continue
