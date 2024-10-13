@@ -6,8 +6,12 @@ while value < len(my_list):
     # print (number)
     if number == 0:
         continue
-    elif number < 0:
-        print(number)  # встретилось отрицательное число
-        break
-    elif value == len(my_list):
+    elif number > 0:
         print(number)
+        # continue
+    #     break
+    # elif value == len(my_list):
+    #     print(number)
+    # else:
+    #     break
+    # print (number)
