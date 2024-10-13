@@ -3,15 +3,7 @@ value = 0
 while value < len(my_list):
     number = my_list[value]
     value = value + 1
-    # print (number)
     if number == 0:
         continue
     elif number > 0:
         print(number)
-        # continue
-    #     break
-    # elif value == len(my_list):
-    #     print(number)
-    # else:
-    #     break
-    # print (number)
