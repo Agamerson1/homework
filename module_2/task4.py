@@ -3,5 +3,5 @@ primes = []
 not_primes = []
 for i in numbers:
     # print(i)
-    if i % 1 == 0 and i % i == 0:
-       
+    if i % 1 == 0 and i % i == 0 and i % 2 != 0 and i % 3 != 0:
+        primes.append
