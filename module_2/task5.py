@@ -2,9 +2,12 @@ def get_matrix(n, m, value):
     matrix = []
     for i in range(n):
         matrix.append([])
+        if n <= 0:
+            continue
         for j in range(m):
             matrix[i].append(value)
-            if
+            if m <= 0:
+                continue
     return matrix
 
 
