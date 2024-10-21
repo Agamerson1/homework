@@ -19,12 +19,12 @@ def is_contains(string, list_to_search):
     count_calls()
     for i in range(len(list_to_search)):
         if str(list_to_search[i]).lower() == string:
-            result = True
+            itog = True
             break
         else:
-            result = False
+            itog = False
             continue
-    return result
+    return itog
 
 
 print(string_info('Underground'))
