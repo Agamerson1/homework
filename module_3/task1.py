@@ -1,5 +1,3 @@
-from xmlrpc.client import boolean
-
 calls = 0
 
 
@@ -16,24 +14,21 @@ def string_info(string):
 
 
 def is_contains(string, list_to_search):
-    string = string.lower
+    string = str(string).lower()
     list_to_search = list(list_to_search)
-    for i in list_to_search:
-        if list_to_search == string:
-            boolean = True
+    count_calls()
+    for i in range(len(list_to_search)):
+        if str(list_to_search[i]).lower() == string:
+            result = True
             break
         else:
-            boolean = False
+            result = False
             continue
-    count_calls()
+    return result
 
 
-print(string_info('Capybara'))
-
-print(string_info('Armageddon'))
-
-print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))  # Urban ~ urBAN
-
-print(is_contains('cycle', ['recycling', 'cyclic']))  # No matches
-
+print(string_info('Underground'))
+print(string_info('downtown'))
+print(is_contains('Logitech', ['tech', 'OgIgI', 'logITEcH']))  # Urban ~ urBAN
+print(is_contains('master', ['remastered', 'cyclic', 'logitech']))  # No matches
 print(calls)
