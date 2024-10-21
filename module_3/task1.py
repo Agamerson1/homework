@@ -1,3 +1,5 @@
+from xmlrpc.client import boolean
+
 calls = 0
 
 
@@ -17,6 +19,13 @@ def is_contains(string, list_to_search):
     string = string.lower
     list_to_search = list(list_to_search)
     for i in list_to_search:
+        if list_to_search == string:
+            boolean = True
+            break
+        else:
+            boolean = False
+            continue
+    count_calls()
 
 
 print(string_info('Capybara'))
