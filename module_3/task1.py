@@ -29,6 +29,6 @@ def is_contains(string, list_to_search):
 
 print(string_info('Underground'))
 print(string_info('downtown'))
-print(is_contains('Logitech', ['tech', 'OgIgI', 'logITEcH']))  # Urban ~ urBAN
-print(is_contains('master', ['remastered', 'cyclic', 'logitech']))  # No matches
+print(is_contains('Logitech', ['tech', 'OgIgI', 'logITEcH']))
+print(is_contains('master', ['remastered', 'cyclic', 'logitech']))
 print(calls)
