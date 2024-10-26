@@ -2,9 +2,11 @@ import random
 
 
 def get_insert():
-    numbers = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 18, 19, 20]
-    num = list(range(1, 19))
-    insert = random.choice(num)
+    numbers = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    # num = list(range(1, 19))
+    insert = random.choice(numbers)
+
+    print(insert)
 
 
 def get_passnum():
@@ -15,3 +17,6 @@ def get_passnum():
          16: 1317115262143531341251161079, 17: 11621531441351261171089, 18: 1215181724272163631545414513612711810,
          19: 118217316415514613712811910, 20: 13141911923282183731746416515614713812911})
     passnum = passwordict.get()
+
+
+get_insert()
