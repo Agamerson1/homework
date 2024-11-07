@@ -5,8 +5,9 @@ def divide(first, second):
     result = 0
     result = first / second
     if second == 0:
-        return result(inf)
+        result = inf
     print(result)
+    return inf
 
 
-divide(10, 0)
+divide(10, 1)
