@@ -7,7 +7,7 @@ class House:
         return self.number_of_floors
 
     def __str__(self):
-        return (f'Название: {self.name}, количество этажей: {self.number_of_floors}')
+        return f'Название: {self.name}, количество этажей: {self.number_of_floors}'
 
     def go_to(self, new_floor):
         cur_floor = 0
