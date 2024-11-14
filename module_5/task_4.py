@@ -17,7 +17,7 @@ class House:
         return f'Название: {self.name}, количество этажей: {self.number_of_floors}'
 
     def __del__(self):
-        print(f"{self.name} cнесён, но он останется в истории")
+        print(f'{self.name} cнесён, но он останется в истории')
 
     def __eq__(self, other):
         if isinstance(other, House):
@@ -68,4 +68,4 @@ print(h1)
 print(h2)
 print(House.houses_history)
 
-# del h1
+del h1
