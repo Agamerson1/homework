@@ -40,10 +40,14 @@ class House:
 
     def __add__(self, value):
         isinstance(value, int)
-        self.number_of_floors += 1
+        self.number_of_floors += value
         return self.number_of_floors
 
-    # def __radd__(self, value):
+    def __radd__(self, value):
+        return self.__add__(value)
+
+    def __iadd__(self, value):
+        return self.__add__(value)
 
 
 h1 = House('ЖК Победа', 300)
