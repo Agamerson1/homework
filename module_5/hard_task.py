@@ -1,3 +1,5 @@
+from typing import List
+
 
 class User:
     def __init__(self, nickname, password, age):
@@ -34,8 +36,8 @@ class Video:
 
 class UrTube:
     def __init__(self):
-        self.users = []
-        self.videos = []
+        self.users: List[User] = list()
+        self.videos: List[Video] = list()
         self.current_user = None
 
     def register(self, nickname, password, age):
@@ -81,17 +83,41 @@ class UrTube:
                 self.videos.append(video)
 
     def get_videos(self, word):
-        vidosi = []
+        videos_titles = []
+        lower_word = word.lower()
         for video in self.videos:
-            if word in video.title:
-                vidosi.append(video)
+            title = video.title
+            lower_title = title.lower()
+            if lower_word in lower_title:
+                videos_titles.append(title)
+        return videos_titles
 
     def watch_video(self, title):
-        pass
+
+        for video in self.videos:
+            video_title = video.title
+            if video_title == title:
+                timee_now = video.time_now
+                while timee_now < video.duration:
+                    timee_now += 1
+                    print(timee_now)
+                    # sleep(1.0)
+                video.time_now = 0
+                print('Конец видео')
 
 
 ur = UrTube()
 v1 = Video('Лучший язык программирования 2024 года', 200)
 v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
 ur.add(v1, v2)
-print(ur.videos)
+print(ur)
+print(ur.get_videos('лучший'))
+print(ur.get_videos('ПРОГ'))
+ur.watch_video('Для чего девушкам парень программист?')
+ur.register('vasya_pupkin', 'lolkekcheburek', 13)
+ur.watch_video('Для чего девушкам парень программист?')
+ur.register('urban_pythonist', 'iScX4vIJClb9YQavjAgF', 25)
+ur.watch_video('Для чего девушкам парень программист?')
+ur.register('vasya_pupkin', 'F8098FM8fjm9jmi', 55)
+print(ur.current_user)
+ur.watch_video('Лучший язык программирования 2024 года!')
