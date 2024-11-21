@@ -93,17 +93,24 @@ class UrTube:
         return videos_titles
 
     def watch_video(self, title):
+        if self.current_user is None:
+            print('Войдите в аккаунт, чтобы смотреть видео')
 
-        for video in self.videos:
-            video_title = video.title
-            if video_title == title:
-                timee_now = video.time_now
-                while timee_now < video.duration:
-                    timee_now += 1
-                    print(timee_now)
-                    # sleep(1.0)
-                video.time_now = 0
-                print('Конец видео')
+        else:
+            if self.current_user.age < 18:
+                print('Вам нет 18 лет, пожалуйста покиньте страницу')
+
+            else:
+                for video in self.videos:
+                    video_title = video.title
+                    if video_title == title:
+                        timee_now = video.time_now
+                        while timee_now < video.duration:
+                            timee_now += 1
+                            print(timee_now)
+                            # sleep(1.0)
+                        video.time_now = 0
+                        print('Конец видео')
 
 
 ur = UrTube()
