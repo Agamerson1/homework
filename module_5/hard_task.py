@@ -1,3 +1,4 @@
+import time
 from typing import List
 
 
@@ -8,7 +9,7 @@ class User:
         self.age = age
 
     def hash_password(self, password):
-        password = hash(password)
+        return hash(password)
 
     def __str__(self):
         return f'Пользователь: {self.nickname}'
@@ -45,31 +46,29 @@ class UrTube:
             if user.nickname == nickname:
                 print(f'Пользователь {nickname} уже существует')
                 return
-            else:
-                new_user = User(nickname, password, age)
-                self.users.append(new_user)
-                self.current_user = new_user
-                print(f'Пользователь {nickname} успешно зарегистрирован и вошёл в систему')
+
+        new_user = User(nickname, password, age)
+        self.users.append(new_user)
+        self.current_user = new_user
+        print(f'Пользователь {nickname} успешно зарегистрирован и вошёл в систему')
 
     def log_in(self, nickname, password):
         for user in self.users:
-            if user.nickname == nickname and user.password == self.hash_password(password):
+            if user.nickname == nickname and user.password == user.hash_password(password):
                 self.current_user = user
                 print(f'Вы успешно вошли в систему, {user.nickname}')
                 return
-            else:
-                print('Пользователь не найден или неверный пароль')
 
-        if self.current_user is not None:
-            print(f'Вы уже вошли как пользователь {self.current_user.nickname}')
-            return
+        print('Пользователь не найден или неверный пароль')
+
 
     def log_out(self):
         if self.current_user is None:
             print('Вход в аккаунт не выполнен')
         else:
-            print(f'Вы вышли из аккаунта {self.current_user.nickname}')
+            name = self.current_user.nickname
             self.current_user = None
+            print(f'Вы вышли из аккаунта {name}')
 
     def add(self, *videos: Video):
         for video in videos:
@@ -95,22 +94,22 @@ class UrTube:
     def watch_video(self, title):
         if self.current_user is None:
             print('Войдите в аккаунт, чтобы смотреть видео')
+            return
+        for video in self.videos:
+            video_title = video.title
+            if video_title == title:
+                if video.adult_mode:
+                    if self.current_user.age < 18:
+                        print('Вам нет 18 лет, пожалуйста, покиньте страницу')
+                        return
 
-        else:
-            if self.current_user.age < 18:
-                print('Вам нет 18 лет, пожалуйста покиньте страницу')
-
-            else:
-                for video in self.videos:
-                    video_title = video.title
-                    if video_title == title:
-                        timee_now = video.time_now
-                        while timee_now < video.duration:
-                            timee_now += 1
-                            print(timee_now)
-                            # sleep(1.0)
-                        video.time_now = 0
-                        print('Конец видео')
+                timee_now = video.time_now
+                while timee_now < video.duration:
+                    timee_now += 1
+                    print(timee_now, end=' ')
+                    time.sleep(1.0)
+                video.time_now = 0
+                print('Конец видео')
 
 
 ur = UrTube()
