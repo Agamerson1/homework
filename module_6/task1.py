@@ -20,15 +20,34 @@ class Plant:
 
 
 class Mammal(Animal):
-
+    def __init__(self, name):
+        super().__init__(name)
 
 class Predator(Animal):
-    pass
+    def __init__(self, name):
+        super().__init__(name)
 
 
 class Flower(Plant):
-    pass
+    def __init__(self, name):
+        super().__init__(name)
 
 
 class Fruit(Plant):
-    pass
+    def __init__(self, name):
+        super().__init__(name)
+        self.edible = True
+
+
+a1 = Predator('Крокодил')
+a2 = Mammal('Чебурашка')
+p1 = Flower('Цветик семицветик')
+p2 = Fruit('Заводной апельсин')
+print(a1.name)
+print(p1.name)
+print(a1.alive)
+print(a2.fed)
+a1.eat(p1)
+a2.eat(p2)
+print(a1.alive)
+print(a2.fed)
