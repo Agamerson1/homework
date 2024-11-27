@@ -14,7 +14,7 @@ class Vehicle:
         return f'Мощность двигателя: {self.__engine_power}'
 
     def get_color(self):
-        return f'Цвет: {self.color}'
+        return f'Цвет: {self.__color}'
 
     def print_info(self):
         print(f'Владелец: {self.owner}')
@@ -29,4 +29,15 @@ class Vehicle:
             print(f'Нельзя сменить цвет на {new_color}')
 
 class Sedan(Vehicle):
-    def __init__(self):
+    __PASSENGERS_LIMIT = 5
+
+    def __init__(self, owner, model, engine_power, color):
+        super().__init__(owner, model, engine_power, color)
+
+
+vehicle1 = Sedan('Masha', 'Toyota Altezza', 1000, 'yellow')
+vehicle1.print_info()
+vehicle1.set_color('blue')
+vehicle1.set_color('pink')
+vehicle1.owner = 'Pashka'
+vehicle1.print_info()
