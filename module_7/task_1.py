@@ -5,7 +5,7 @@ class Product:
         self.category = str(category)
 
     def __str__(self):
-        return f'Продукт: {self.name}, вес: {self.weight} кг, категория: {self.category}'
+        return f' {self.name},  {self.weight}, {self.category}'
 
 
 class Shop:
@@ -23,7 +23,7 @@ class Shop:
             prod_str = str(i)
             if i not in file_get:
                 file = open(self.__file_name, 'a')
-                file.write(prod_str + '\n')
+                file.write(f'{i}\n')
                 file.close()
             else:
                 print(f'Продукт "{i.name}" уже есть в магазине.')

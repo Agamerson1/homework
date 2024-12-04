@@ -1,21 +1,3 @@
-Продукт: Potato, вес: 50.5 кг, категория: Vegetables
-Продукт: Spaghetti, вес: 3.4 кг, категория: Groceries
-Продукт: Potato, вес: 5.5 кг, категория: Vegetables
-Продукт: Potato, вес: 50.5 кг, категория: Vegetables
-Продукт: Spaghetti, вес: 3.4 кг, категория: Groceries
-Продукт: Potato, вес: 5.5 кг, категория: Vegetables
-Продукт: Potato, вес: 50.5 кг, категория: Vegetables
-Продукт: Spaghetti, вес: 3.4 кг, категория: Groceries
-Продукт: Potato, вес: 5.5 кг, категория: Vegetables
-Продукт: Potato, вес: 50.5 кг, категория: Vegetables
-Продукт: Spaghetti, вес: 3.4 кг, категория: Groceries
-Продукт: Potato, вес: 5.5 кг, категория: Vegetables
-Продукт: Potato, вес: 50.5 кг, категория: Vegetables
-Продукт: Spaghetti, вес: 3.4 кг, категория: Groceries
-Продукт: Potato, вес: 5.5 кг, категория: Vegetables
-Продукт: Potato, вес: 50.5 кг, категория: Vegetables
-Продукт: Spaghetti, вес: 3.4 кг, категория: Groceries
-Продукт: Potato, вес: 5.5 кг, категория: Vegetables
-Продукт: Potato, вес: 50.5 кг, категория: Vegetables
-Продукт: Spaghetti, вес: 3.4 кг, категория: Groceries
-Продукт: Potato, вес: 5.5 кг, категория: Vegetables
+ Potato,  50.5, Vegetables
+ Spaghetti,  3.4, Groceries
+ Potato,  5.5, Vegetables
