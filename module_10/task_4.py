@@ -30,4 +30,7 @@ class Cafe:
             print(f'{guest.name} has arrived at the cafe.')
 
     def discuss_guest(self):
-        while self.queue.empty
+        while not self.queue.empty or not self.table.guest is None:
+            guest = self.queue.get()
+            print(f' {guest.name}')
+            guest.start()
